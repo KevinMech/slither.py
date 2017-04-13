@@ -7,6 +7,7 @@ window = curses.initscr()
 window.keypad(1)
 selectMenu = 0
 
+# Draw Menu Input Logic
 while True:
     graphics.drawMenu(window, selectMenu)
     key = window.getch()
@@ -17,9 +18,9 @@ while True:
     elif key == 10:
         size = window.getmaxyx()
         if selectMenu == 0:
-            pass
+            window.addstr(size[0] - 1, 0, 'Singleplayer not supported yet!')
         elif selectMenu == 1:
-            window.addstr(size[0] - 1, 0, 'Multiplayer not supported yet!')
+            pass
         else:
             window.clear()
             window.addstr(size[0] - 1, 0, 'Config not supported yet!')

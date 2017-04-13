@@ -1,14 +1,21 @@
 import curses
 
 
-def drawMenu(window, selectMenu):
-    options = ['Single Player', 'Multiplayer', 'Options']
-    selection = [curses.A_REVERSE, curses.A_NORMAL, curses.A_NORMAL]
-
-    # Find half the screen size for both width and height
+def findCenter(window):
+    '''Find half the screen size for both width and height'''
     size = window.getmaxyx()
     halfheight = round(size[0] / 2)
     halfwidth = round(size[1] / 2)
+    center = (halfheight, halfwidth)
+    return center
+
+
+def drawMenu(window, selectMenu):
+    '''Draw menu to the terminal screen'''
+    options = ['Single Player', 'Multiplayer', 'Options']
+    selection = [curses.A_REVERSE, curses.A_NORMAL, curses.A_NORMAL]
+    halfheight = findCenter(window)[0]
+    halfwidth = findCenter(window)[1]
 
     # Menu Selection
     if selectMenu == 1:
