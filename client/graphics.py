@@ -12,10 +12,8 @@ def drawMenu(window, selectMenu):
 
     # Menu Selection
     if selectMenu == 1:
-        pass
         selection = [curses.A_NORMAL, curses.A_REVERSE, curses.A_NORMAL]
     elif selectMenu == 2:
-        pass
         selection = [curses.A_NORMAL, curses.A_NORMAL, curses.A_REVERSE]
 
     # Draw menu to screen
