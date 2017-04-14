@@ -1,5 +1,5 @@
-# import system
 import curses
+import game
 import graphics
 
 # Initialize Screen
@@ -20,7 +20,7 @@ while True:
         if selectMenu == 0:
             window.addstr(size[0] - 1, 0, 'Singleplayer not supported yet!')
         elif selectMenu == 1:
-            pass
+            game.start(window)
         else:
             window.clear()
             window.addstr(size[0] - 1, 0, 'Config not supported yet!')
