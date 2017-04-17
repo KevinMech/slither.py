@@ -6,7 +6,6 @@ def start(window):
     window.clear()
     window.refresh()
     _connectServer(window)
-    window.getch()
 
 
 def _connectServer(window):
@@ -19,6 +18,8 @@ def _connectServer(window):
     except Exception as e:
         window.addstr(center[0], center[1], 'Failed to create socket connection :(')
         window.addstr(center[0] + 1, center[1], str(e))
+        window.getch()
+        window.clear()
     # Attempt to connect to server
     window.addstr(center[0], center[1], 'Connecting to server...')
     try:
@@ -26,3 +27,5 @@ def _connectServer(window):
     except Exception as e:
         window.addstr(center[0] - 2, center[1] - 1, 'Failed to connect to server :(')
         window.addstr(center[0] + 1, center[1] - 1, str(e))
+        window.getch()
+        window.clear()
