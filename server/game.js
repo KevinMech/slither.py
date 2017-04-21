@@ -12,5 +12,9 @@ module.exports = {
 			grid.push(row);
 		}
 		return grid;
+	},
+
+	Update: function () {
+		console.log('frame updated');
 	}
 };
