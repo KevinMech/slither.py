@@ -15,6 +15,6 @@ module.exports = {
 	},
 
 	Update: function () {
-		console.log('frame updated');
+		//console.log('frame updated');
 	}
 };
