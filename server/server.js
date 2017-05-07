@@ -13,10 +13,11 @@ let grid = game.createGrid(10, 10);
 console.log(grid);
 console.log('level created!');
 
-//On discovering new client, create a new socket and attach event handlers to it
+//On discovering new client, create a new socket and attach event handlers to it, and then place the player randomly on the grid
 server.on('connection', function (socket) {
 	console.log('found new player!');
 	socket.write('connected');
+	game.setPlayer();
 });
 
 //Update Game
